@@ -46,6 +46,6 @@ class ColorsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def color_params
-      params.require(:color).permit(:hex, :rgba, :hsla)
+      params.require(:color).permit(:hex, :rgba, :hsla, :user_id)
     end
 end
