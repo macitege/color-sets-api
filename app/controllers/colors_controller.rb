@@ -1,9 +1,9 @@
-class ColorsController < ApplicationController
+class ColorsController < ProtectedController
   before_action :set_color, only: [:show, :update, :destroy]
 
   # GET /colors
   def index
-    @colors = Color.all
+    @colors = current_user.colors.all
 
     render json: @colors
   end
@@ -15,7 +15,7 @@ class ColorsController < ApplicationController
 
   # POST /colors
   def create
-    @color = Color.new(color_params)
+    @color = current_user.colors.new(color_params)
 
     if @color.save
       render json: @color, status: :created, location: @color
