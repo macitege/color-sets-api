@@ -10,7 +10,7 @@
 - This API provides authentication, stores users' information, and saved color
 palettes color code information in string format.
 - Contains 2 tables: USER and COLORS
-- Relationship between these tables is that USERS has many COLORS (one to many)
+- The relationship between these tables is that USERS has many COLORS (one to many)
 - Any actions which change data is being authenticated and the data is owned by
 the user performing the change.
 
@@ -24,6 +24,12 @@ For the color palette generator application, I needed an API to store users and
 their saved colors. I 've created this API with 2 tables, USERS and COLORS, and
 bound them by creating a foreign id (USER) column in COLORS table.
 
+## Unsolved but should be Solved
+- API could send parsed and immediately usable color codes on a fetch request.
+- Colors table has hsla column for colors hsla codes, however, the application
+is not using it actually. So, one of the next things is to create hsla codes for colors and make that column active.
+
+
 ### Initial Project
-#### Wire Frames:
+#### BACK END E.R.D.:
 - [BACK END ENTITY RELATIONSHIP DIAGRAM](https://i.imgur.com/EKMieWw.jpg)
